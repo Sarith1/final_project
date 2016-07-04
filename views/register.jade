@@ -1,0 +1,34 @@
+extends ./layout.jade
+
+script(src='http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js')
+script.
+	$(document).ready(function(){
+		$('.log-btn').click(function(event) {
+			if($('#email').val().trim().length === 0 || $('#password').val().trim().length === 0 || $('#name').val().trim().length === 0) {
+				event.preventDefault();
+				$('#error-message').html("Your username, email or password is empty.");
+			}
+			});
+			});
+			
+
+block content
+	.middle 
+		h2 
+
+		.login-form
+			h1 Register
+			form(action='/register' method='post')
+				.form-group
+					input#name.form-control(type='text', placeholder='Name', name='name')
+					i.fa.fa-user
+				.form-group
+					input#email.form-control(type='text', placeholder='Email', name='email' )
+					i.fa.fa-user		
+				.form-group.log-status
+					input#password.form-control(type='password', placeholder='Password', name='password')
+					i.fa.fa-lock
+					br
+					span.alert Invalid Credentials
+					button.log-btn(type='submit') Register
+	

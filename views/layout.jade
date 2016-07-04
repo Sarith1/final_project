@@ -1,0 +1,65 @@
+script(src='javascripts/jquery.min.js')
+script(src='javascripts/searchjs.js')
+
+
+head
+   style
+    include ../public/stylesheets/style.css
+    include ../assets/css/bootstrap.min.css
+   script(src='javascripts/jquery.min.js')
+   script(src='javascripts/searchjs.js')
+
+   title= title
+
+  body(data-spy='scroll', data-target='.navigation')
+   block navbar
+   
+
+    section#section-header.main-nav
+      .container
+        .row
+          .navbar-header
+            button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+              span.icon-bar
+              span.icon-bar
+              span.icon-bar
+            .navbar-brand
+              a.scroll(href='/')
+                img.img-responsive(src='/images/free_logo.jpg', alt='')
+
+          .navbar-collapse.collapse.navbar-main.navigation(role='navigation')
+            ul.nav.navbar-nav.menu.navbar-right
+              li.dropdown
+                a.dropdown-toggle(href='/', data-toggle='dropdown')
+                  | Home
+                  i.fa.fa-caret-down
+                
+              li
+                a(href='/login') Log In
+              li
+                a.scroll(href='/register') Register
+              li
+                a(href='/about') About
+              li
+                a(href='/city') Tips
+              li.dropdown
+                a.dropdown-toggle(href='#', data-toggle='dropdown')
+                  | User
+                  i.fa.fa-caret-down
+                ul.dropdown-menu
+                  li
+                    a(href='/profile') Profile
+                  li
+                    a(href='/favorites') Favorites
+                  li
+                    a(href='/logout') Logout
+              li
+                form(name="searchform", method="post", action="/search")
+                      input#searching(type="text", name="searchTyping", autocomplete="off", placeholder='Search city or country', required )
+                      div#foundPlaces
+                      input#searchbutton(type="submit", value="Search")
+
+
+
+    block content
+
