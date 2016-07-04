@@ -8,7 +8,17 @@ var fs = require('fs');
 var pg = require('pg');
 var session = require('express-session');
 var app = express();
+var sass = require( 'node-sass' )
 
+
+sass.render( {
+    file: '../public/stylesheets/style.scss'
+}, (err, result) => { 
+    fs.writeFile( '../public/stylesheets/style.css', result.css.toString(), ( err ) => {
+        if ( err ) throw err
+            console.log( 'Sass written to css' )
+    } )
+} )
 // Session config
 app.use(session({
   secret: 'oh wow very secret much security',
@@ -64,6 +74,9 @@ app.use('/about', about);
 // Static files
 app.use(express.static('./public'));
 app.use('/search', express.static('./public'));
+
+
+
 
 // // catch 404 and forward to error handler
 // app.use(function(req, res, next) {
