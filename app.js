@@ -8,13 +8,13 @@ var fs = require('fs');
 var pg = require('pg');
 var session = require('express-session');
 var app = express();
-var sass = require( 'node-sass' )
+var sass = require( 'node-sass' );
 
 
 sass.render( {
-    file: '../public/stylesheets/style.scss'
+    file: './public/stylesheets/style.scss'
 }, (err, result) => { 
-    fs.writeFile( '../public/stylesheets/style.css', result.css.toString(), ( err ) => {
+    fs.writeFile( './public/stylesheets/style.css', result.css.toString(), ( err ) => {
         if ( err ) throw err
             console.log( 'Sass written to css' )
     } )
@@ -49,7 +49,7 @@ var about = require ('./routes/about');
 var db = require('./models/database')
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', './views');
 app.set('view engine', 'jade');
 
 // uncomment after placing your favicon in /public

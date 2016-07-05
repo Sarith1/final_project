@@ -85,7 +85,17 @@ db.recipe = db.conn.define('recipe', {
 db.user.hasMany(db.recipe)
 db.recipe.belongsTo(db.user)
 
-
+db.conn.sync({force: true
+}).then(function() {
+  console.log('sync done');
+}).then(function(){
+  Promise.all([
+    db.user.create({
+      name: 'kip',
+      email: 'kip',
+      password: 'kip'
+    }),
+  ])});
 
 
 module.exports = db

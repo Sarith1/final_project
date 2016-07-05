@@ -1,0 +1,11 @@
+extends ./layout.jade			
+
+	
+
+block content
+	.middle.login-foorm
+		h2 Hello #{user.name}
+		p Welkom op je profiel
+			each recipe in usersRecipes
+				h2 #{recipe.title}
+				h3 ✏ #{recipe.body}

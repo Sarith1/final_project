@@ -10,22 +10,26 @@ script(src='http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js')
 					});
 				});
 
-block navbar
+
+
+//- block navbar
 		
 		
 block content
 
-body	
-	#createtip
-		if user
-			a(href='/profile') view profile
+	//- body	
+	if user
+		a(href='/profile') view profile
+		br
+		a(href='/logout') log out
+	else
+		form(action='/addRecipe' method='post')
+			label Your title
+			input#title(name='title' required)
 			br
-			a(href='/logout') log out
-		else
-			form(action='/addRecipe' method='post')
-				label Your title
-				input#title(name='title' required)
-				br
-				label Your text 
-				input#body(name='body' required)
-				input(type='submit' value='login' id='submit')
+			label Ingredients
+			input#ingredients(name='ingredients' required)
+			br
+			label Recipe
+			input#recipe(name='recipe' required)
+			input(type='submit' value='login' id='submit')
