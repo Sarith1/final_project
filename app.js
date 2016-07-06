@@ -8,7 +8,7 @@ var fs = require('fs');
 var pg = require('pg');
 var session = require('express-session');
 var app = express();
-var sass = require( 'node-sass' );
+var sass = require('node-sass');
 
 
 sass.render( {
@@ -36,12 +36,12 @@ app.use(function(req,res,next){
 // Get all routes
 var routes = require('./routes/index');
 var users = require('./routes/users');
-//var profile = require('./routes/profile');
+var profile = require('./routes/profile');
 var addRecipe = require('./routes/addRecipe');
 var search = require ('./routes/search')
 var login = require ('./routes/login');
 var register = require ('./routes/register');
-//var logout = require ('./routes/logout');
+var logout = require ('./routes/logout');
 var about = require ('./routes/about');
 //var favorites = require ('./routes/favorites');
 
@@ -63,12 +63,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/users', users);
 app.use('/login', login);
-//app.use('/profile', profile);
+app.use('/profile', profile);
 app.use('/addRecipe', addRecipe);
 app.use('/register', register);
 app.use('/users', users);
 app.use('/search', search);
-//app.use('/logout', logout);
+app.use('/logout', logout);
 app.use('/about', about);
 
 // Static files

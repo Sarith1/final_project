@@ -40,16 +40,6 @@ db.user = db.conn.define('users', {
       len: [3, Infinity]
     },
   }
-}, {
-  freezeTableName: true,
-  instanceMethods: {
-    generateHash: function(password) {
-      return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
-    },
-    validPassword: function(password) {
-      return bcrypt.compareSync(password, this.password);
-    },
-  }
 });
 
 
@@ -79,13 +69,16 @@ db.recipe = db.conn.define('recipe', {
       len: [2, Infinity]
     },
   },
+  rating: {
+    type: Sequelize.INTEGER,
+  },
   user_id: Sequelize.INTEGER
 });
 
 db.user.hasMany(db.recipe)
 db.recipe.belongsTo(db.user)
 
-db.conn.sync({force: true
+db.conn.sync({force: false
 }).then(function() {
   console.log('sync done');
 }).then(function(){

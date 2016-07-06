@@ -7,19 +7,19 @@ $ ( document ).ready( function () {
 		var inputLetters = {
 			searchTyping: $ ('#searching') .val( )
 		}
-		$('#foundPlaces').empty()
+		$('#foundRecipes').empty()
 			if(fireRequest) {
 				fireRequest = false
 				$.post ('search/ajaxSearch', inputLetters, function(data){
 
-					for (place in data){
-						//console.log(data[place].name)
-						$ ( '#foundPlaces' ).append( '<div class="newCity">' + data[place].name + " " + 
-							data[place].country.name + '</div>' )
+					for (recipe in data){
+						//console.log(data[recipe].title)
+						$ ( '#foundRecipes' ).append( '<div class="newRecipe">' + data[recipe].title + " " + 
+							data[recipe].ingredients + '</div>' )
 					}
-					$ ( '.newCity' ) .click( function() { 
+					$ ( '.newRecipe' ) .click( function() { 
 						$('#searching').val($(this).text()) 
-						$('#foundPlaces').empty()
+						$('#foundRecipes').empty()
 					})
 				})
 				setTimeout(function(){

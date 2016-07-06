@@ -3,10 +3,10 @@ var router = express.Router();
 var pg = require('pg');
 var Sequelize = require('sequelize');
 var session = require('express-session');
-var db = require('../modules/database');
+var db = require('../models/database');
 var bodyParser = require('body-parser');
 
-router.get('/', function(req, res) {
+router.get('/',(req, res) => {
 	var user = req.session.user;
 	console.log('Getting session: ')
 	console.log(req.session)
@@ -21,11 +21,13 @@ router.get('/', function(req, res) {
 				user_id: ID,
 			}
 		}).then(function(recipes) {
-			var Data = recipe.map(function(profiletips) {
+			var Data = recipes.map(function(myRecipes) {
 				return {
-					title: profiletips.dataValues.title,
-					body: profiletips.dataValues.body,
-					user_id: profiletips.dataValues.user_id
+					title: myRecipes.dataValues.title,
+					ingredients: myRecipes.dataValues.ingredients,
+					body: myRecipes.dataValues.body,
+					rating: myRecipes.dataValues.rating,
+					user_id: myRecipes.dataValues.user_id
 				}
 
 
