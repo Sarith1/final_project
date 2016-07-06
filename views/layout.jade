@@ -42,6 +42,8 @@ head
                 a(href='/profile') Your Recipes
               li
                 a(href='/addRecipe') Add Recipes
+              li
+                a(href='/categories') Categories
               li.dropdown
                 a.dropdown-toggle(href='#', data-toggle='dropdown')
                   | User
@@ -53,13 +55,10 @@ head
                     a(href='/favorites') Favorites
                   li
                     a(href='/logout') Logout
-              li
-                form(name="searchform", method="post", action="/search")
-                      input#searching(type="text", name="searchTyping", autocomplete="off", placeholder='Search city or country', required )
-                      div#foundPlaces
-                      input#searchbutton(type="submit", value="Search")
+              
 
 
 
     block content
+      .contentblock
 

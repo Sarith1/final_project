@@ -35,10 +35,9 @@ app.use(function(req,res,next){
 
 // Get all routes
 var routes = require('./routes/index');
-var users = require('./routes/users');
 var profile = require('./routes/profile');
+var categories = require('./routes/categories');
 var addRecipe = require('./routes/addRecipe');
-var search = require ('./routes/search')
 var login = require ('./routes/login');
 var register = require ('./routes/register');
 var logout = require ('./routes/logout');
@@ -61,13 +60,11 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
-app.use('/users', users);
+app.use('/categories', categories);
 app.use('/login', login);
 app.use('/profile', profile);
 app.use('/addRecipe', addRecipe);
 app.use('/register', register);
-app.use('/users', users);
-app.use('/search', search);
 app.use('/logout', logout);
 app.use('/about', about);
 

@@ -12,7 +12,7 @@ router.get('/', (req, res) => {
 	if (user === undefined) {
 		res.redirect('/?message=' + encodeURIComponent("Please log in."));
 	} else {
-		res.render('addRecipe', {user:user});
+		res.render('addRecipe', {user:user}, {title: 'Categories'});
 	};
 });
 

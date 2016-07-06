@@ -1,0 +1,9 @@
+extends ./layout.jade
+
+
+block content
+	each category in allCategories
+		.col-md-3
+			.log-btn #{recipe.category}
+
+		

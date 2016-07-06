@@ -45,11 +45,34 @@ block content
 				input(type='radio', name='rating', value='5')
 				i
 				br
-				br
-				br
-				br
-				strong.choice 
-				br
-				br
-				br
+			.checkbox
+			label
+				input(type='checkbox', value='Fast and Healthy') 
+				| Fast and Healty
+			.checkbox
+			label
+				input(type='checkbox', value='Vegi')
+				| Vegi
+			.checkbox.disabled
+			label
+				input(type='checkbox', value='Show-Off')
+				| Show-Off
+			.checkbox
+			label
+				input(type='checkbox', value='Lunch')
+				| Lunch
+			.checkbox
+			label
+				input(type='checkbox', value='Breakfast')
+				| Breakfast
+			.checkbox.disabled
+			label
+				input(type='checkbox', value='Dessert')
+				| Dessert
+			br
+			br
+			strong.choice 
+			br
+			br
+			br
 			button.log-btn(type='submit') Submit

@@ -69,6 +69,9 @@ db.recipe = db.conn.define('recipe', {
       len: [2, Infinity]
     },
   },
+  category: {
+    type: Sequelize.STRING,
+  },
   rating: {
     type: Sequelize.INTEGER,
   },

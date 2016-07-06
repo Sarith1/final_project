@@ -33,7 +33,7 @@ router.get('/',(req, res) => {
 
 			})
 			var usersRecipes = Data;
-
+			console.log("**************************")
 			console.log(usersRecipes);
 			res.render('profile', {
 				title: 'Your Profile',

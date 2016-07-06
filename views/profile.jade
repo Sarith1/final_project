@@ -3,10 +3,13 @@ extends ./layout.jade
 	
 
 block content
-	.middle.login-foorm
-		h2 Hello #{name}
-		p Welkom op je profiel
-			each recipe in usersRecipes
-				h2 #{recipe.title}
-				h3 #{recipe.ingredients}
-				h3 ✏ #{recipe.body}
+	each recipe in usersRecipes
+			.col-md-3
+				.recipe-form
+					img(src='...', alt='...')
+					h3 #{recipe.title}
+
+					p #{recipe.rating} ★'s
+					br 
+					a.btn.btn-primary(href='#', role='button') View
+					a.btn.btn-default(href='#', role='button') Like
