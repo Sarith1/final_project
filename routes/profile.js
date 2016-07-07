@@ -18,7 +18,7 @@ router.get('/',(req, res) => {
 		var ID = req.session.user.id;
 		db.recipe.findAll({
 			where: {
-				user_id: ID,
+				userId: ID,
 			}
 		}).then(function(recipes) {
 			var Data = recipes.map(function(myRecipes) {
@@ -27,7 +27,7 @@ router.get('/',(req, res) => {
 					ingredients: myRecipes.dataValues.ingredients,
 					body: myRecipes.dataValues.body,
 					rating: myRecipes.dataValues.rating,
-					user_id: myRecipes.dataValues.user_id
+					userId: myRecipes.dataValues.userId
 				}
 
 

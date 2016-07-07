@@ -23,56 +23,37 @@ script(src='http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js')
 block content
 	.login-fooorm
 		form(action='/addRecipe/addRecipe' method='post')
-			.form-group
-				input#title.fooorm-control(name='title' required placeholder='Title')
-				br
-			.form-group
-				input#ingredients.foorm-control(name='ingredients' required placeholder='Ingredients')
-				br
-			.form-group
-				input#body.foorm-control(name='body' required placeholder='recipe')
-				br
-				br
-			span.star-rating
-				input(type='radio', name='rating', value='1')
-				i
-				input(type='radio', name='rating', value='2')
-				i
-				input(type='radio', name='rating', value='3')
-				i
-				input(type='radio', name='rating', value='4')
-				i
-				input(type='radio', name='rating', value='5')
-				i
-				br
-			.checkbox
-			label
-				input(type='checkbox', value='Fast and Healthy') 
-				| Fast and Healty
-			.checkbox
-			label
-				input(type='checkbox', value='Vegi')
-				| Vegi
-			.checkbox.disabled
-			label
-				input(type='checkbox', value='Show-Off')
-				| Show-Off
-			.checkbox
-			label
-				input(type='checkbox', value='Lunch')
-				| Lunch
-			.checkbox
-			label
-				input(type='checkbox', value='Breakfast')
-				| Breakfast
-			.checkbox.disabled
-			label
-				input(type='checkbox', value='Dessert')
-				| Dessert
-			br
-			br
-			strong.choice 
-			br
-			br
-			br
-			button.log-btn(type='submit') Submit
+				.form-group
+					input#title.fooorm-control(name='title' required placeholder='Title')
+					br
+				.form-group
+					input#ingredients.foorm-control(name='ingredients' required placeholder='Ingredients')
+					br
+				.form-group
+					input#body.foorm-control(name='body' required placeholder='recipe')
+					br
+					br
+					span.star-rating
+						input(type='radio', name='rating', value='1')
+						i
+						input(type='radio', name='rating', value='2')
+						i
+						input(type='radio', name='rating', value='3')
+						i
+						input(type='radio', name='rating', value='4')
+						i
+						input(type='radio', name='rating', value='5')
+						i
+						br
+				.form-group
+					label(for='sel1') Select list:
+						select(name="category")#sel1.form-control		
+							each category in allCategories
+								option(value="#{category.name}") #{category.name}
+					
+						
+						br
+						br
+						br
+						br
+				button.log-btn(type='submit') Submit

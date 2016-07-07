@@ -99,6 +99,7 @@ p {
 img {
   max-width: 100%;
   height: auto;
+  border-radius:  8px;
 }
 
 iframe, audio {
@@ -142,6 +143,11 @@ h5 {
 
 h6 {
   font-size: 0.875em;
+}
+
+.logo {
+  font-family: 'Pacifico';
+  font-size: 24px;
 }
 
 .right {
@@ -218,7 +224,7 @@ h6 {
   }
   &.active a {
     background: #C0E6A0 !important;
-    border-bottom: 4px solid #4668FF;
+    border-bottom: 4px solid #C86A86;
     z-index: 1;
     padding-bottom: 24px;
   }
@@ -430,7 +436,12 @@ ul.navbar-nav {
   margin-bottom: 50px;
   margin-left: 50px;
   margin-top: 50px;
+}
 
+.chekboks {
+  display: inline-block;
+  font-family: 'Raleway';
+  font-size: 12px;
 }
 
 .form-group {
@@ -529,6 +540,22 @@ ul.navbar-nav {
   width: 75%;
   font-size: 16px;
   font-family: 'Pacifico';
+  height: 50px;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+}
+
+.cat-btn {
+  background: #95C86A;
+  display: inline-block;
+  width: 75%;
+  font-size: relative;
+  font-family: 'Pacifico';
+  text-orientation: center;
   height: 50px;
   color: #fff;
   text-decoration: none;

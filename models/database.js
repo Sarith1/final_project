@@ -69,19 +69,40 @@ db.recipe = db.conn.define('recipe', {
       len: [2, Infinity]
     },
   },
-  category: {
-    type: Sequelize.STRING,
-  },
   rating: {
     type: Sequelize.INTEGER,
   },
-  user_id: Sequelize.INTEGER
+  category: {
+    type: Sequelize.STRING,
+    allowNull: false,
+    validate: {
+      notEmpty: true,
+      len: [2, Infinity]
+  },
+  },
+});
+
+db.category = db.conn.define('category', {
+  name: {
+    type: Sequelize.STRING,
+    allowNull: false,
+    validate: {
+      notEmpty: true,
+      len: [2, Infinity]
+    },
+  },
+
+  img: {
+    type: Sequelize.STRING
+  }
 });
 
 db.user.hasMany(db.recipe)
 db.recipe.belongsTo(db.user)
+db.recipe.hasMany(db.category)
+db.category.belongsTo(db.recipe)
 
-db.conn.sync({force: false
+db.conn.sync({force: true
 }).then(function() {
   console.log('sync done');
 }).then(function(){
@@ -91,6 +112,55 @@ db.conn.sync({force: false
       email: 'kip',
       password: 'kip'
     }),
+    db.category.create({
+      name: 'Breakfast',
+      img: 'images/breakfast.png'
+    }),
+      db.category.create({
+      name: 'Lunch',
+      img: 'images/lunch.png'
+    }),    
+      db.category.create({
+      name: 'Appetizers',
+      img: 'images/appetizer.png'
+    }),
+      db.category.create({
+      name: 'Soups',
+      img: 'images/soup.png'
+    }),
+      db.category.create({
+      name: 'Salads',
+      img: 'images/salad.png'
+    }),
+      db.category.create({
+      name: 'Meat',
+      img: 'images/meat.png'
+    }),
+      db.category.create({
+      name: 'Fish',
+      img: 'images/fish.png'
+    }),
+      db.category.create({
+      name: 'Vegetarian',
+      img: 'images/veggi.png'
+    }),    
+      db.category.create({
+      name: 'Desserts',
+      img: 'images/dessert.png'
+    }),
+      db.category.create({
+      name: 'Show-off',
+      img: 'images/show-off.png'
+    }),
+      db.category.create({
+      name: 'Under 20 mins',
+      img: 'images/fast.png'
+    }),
+      db.category.create({
+      name: 'Healthy',
+      img: 'images/healthy.png'
+    }),
+
   ])});
 
 

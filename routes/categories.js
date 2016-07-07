@@ -13,18 +13,26 @@ router.get('/', (req, res) => {
 	if (user === undefined) {
 		res.redirect('/?message=' + encodeURIComponent("Please log in."));
 	} else {
-		db.recipe.category.findAll().then(function(categories){
-			var allCategories = db.recipe.category.map(function(category){
+		db.category.findAll().then(function(categories) {
+			// console.log("ahdhasdhasdhashdashdahsdhashdashdhashh")
+			var allCategories = categories.map(function(category) {
+				// console.log("@&%E*^DUYTAGJKNANOD)(@E(*DUHA()*Y)(A*DS)(AS")
+				// console.log(category.dataValues)
 				return {
-					category: db.recipe.category
+					name: category.dataValues.name,
+					img: category.dataValues.img
+						// img: db.category.img
 				}
+			})
+			Catjes = allCategories;
+			res.render('categories', {
+				title: 'Categories',
+				allCategories: Catjes
 			})
 		})
 	}
-  res.render('categories', {title: 'Categories'})
+
 });
-
-
 
 
 
