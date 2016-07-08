@@ -24,7 +24,7 @@ router.get('/', (req, res) => {
 						// img: db.category.img
 				}
 			})
-			Catjes = allCategories;
+			var Catjes = allCategories;
 			res.render('categories', {
 				title: 'Categories',
 				allCategories: Catjes

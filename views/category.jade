@@ -1,0 +1,17 @@
+extends ./layout.jade			
+
+	
+
+block content
+	each recipe in categoryRecipes
+			.col-md-3
+				.recipe-form
+					img(src='/images/breakfast.png')
+					h3 #{recipe.title}
+
+					h2.mooier #{recipe.rating} ★'s
+					br 
+					a.cat-btn(href='/recipe/' + recipe.title) 
+			
+						|View
+				

@@ -37,6 +37,8 @@ app.use(function(req,res,next){
 var routes = require('./routes/index');
 var profile = require('./routes/profile');
 var categories = require('./routes/categories');
+var category = require('./routes/category')
+var recipe = require ('./routes/recipe')
 var addRecipe = require('./routes/addRecipe');
 var login = require ('./routes/login');
 var register = require ('./routes/register');
@@ -61,6 +63,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/categories', categories);
+app.use('/category', category);
+app.use('/recipe', recipe);
 app.use('/login', login);
 app.use('/profile', profile);
 app.use('/addRecipe', addRecipe);

@@ -35,7 +35,7 @@ router.get('/', (req, res) => {
 
 router.post('/addRecipe', function(req, res){
 
-	var ID = req.session.user.id;
+	//var ID = req.session.user.id;
 	console.log("*********************")
 	console.log(req.body.rating)
 	console.log(req.body.category)
@@ -47,7 +47,7 @@ router.post('/addRecipe', function(req, res){
 		ingredients: req.body.ingredients,
 		rating: req.body.rating,
 		category: req.body.category,
-		userId: ID,
+		userId: req.session.user.id,
 
 	}).then(function() {
 		res.redirect('/profile')
