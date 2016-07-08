@@ -407,6 +407,21 @@ ul.navbar-nav {
   display: inline-block;
 
 }
+.recipe-formbig {
+  width: 600px;
+  font-family: 'Raleway';
+  text-align: center;
+  padding: 40px 30px;
+  background: #E09676;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  border-width: 3px;
+  border-color: white;
+  margin: auto;
+  position: absolute;
+
+}
 
 .col-md-3{
   margin-right: 50px;
@@ -548,6 +563,15 @@ ul.navbar-nav {
   text-orientation: center;
 
 }
+.title {
+  font-family: 'Pacifico';
+  color: black;
+  text-orientation: center;
+  text-align: center;
+  vertical-align: middle;
+  float: center;
+
+}
 
 .link {
   text-decoration: none;
@@ -578,12 +602,7 @@ ul.navbar-nav {
   margin-bottom: 15px;
 }
 
-.searchcity {
-  margin: 0;
-  height: 100%;
-  width: 100%;
-  padding-top: 17px;
-}
+
 
 @-moz-keyframes wrong-log {
   0%, 100% {

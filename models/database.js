@@ -102,89 +102,90 @@ db.recipe.belongsTo(db.user)
 db.recipe.hasMany(db.category)
 db.category.belongsTo(db.recipe)
 
-db.conn.sync({force: true
+db.conn.sync({force: false
 }).then(function() {
   console.log('sync done');
-}).then(function(){
-  Promise.all([
-    db.user.create({
-      name: 'kip',
-      email: 'kip',
-      password: 'kip'
-    }),
-    db.recipe.create({
-      title: 'Uitsmijter',
-      body: 'Bak één of twee eieren. Smeer boter op de boterhammen en beleg deze daarna met ham en kaas. Leg hier als laatst je warme ei op.',
-      ingredients: 'Twee boterhammen, kaas, ham, boter en eieren',
-      rating: 3,
-      category: 'Breakfast'
-    }),
-    db.recipe.create({
-      title: 'Tosti',
-      body: 'Beleg een boterham met ham en kaas en leg hier nog een boterham op. Smeer aan beide buitenste zijdes van de boterhammen een dun laagje boter. Leg nu je tosti op de gril tot deze aan beide kanten goudkleurig is.',
-      ingredients: 'Twee boterhammen, kaas, ham, boter',
-      rating: 3,
-      category: 'Lunch'
-    }),
-    db.recipe.create({
-      title: 'Kikkererwten uit de oven',
-      body: 'Doe de kikkererwten in een kom. Doe hier de olijfolie, kruiden en peper bij en mix dit goed door elkaar. Spreid je mengsel over een met bakpapier bedekte bakplaat en plaats deze 20 minuten in de oven op 200 graden.',
-      ingredients: 'Kikkererwten, paprikapoeder, chilipoeder, knoflookpoeder olijfolie en peper.',
-      rating: 4,
-      category: 'Appetizers'
-    }),
-    db.category.create({
-      name: 'Breakfast',
-      img: 'images/breakfast.png'
-    }),
-      db.category.create({
-      name: 'Lunch',
-      img: 'images/lunch.png'
-    }),    
-      db.category.create({
-      name: 'Appetizers',
-      img: 'images/appetizer.png'
-    }),
-      db.category.create({
-      name: 'Soups',
-      img: 'images/soup.png'
-    }),
-      db.category.create({
-      name: 'Salads',
-      img: 'images/salad.png'
-    }),
-      db.category.create({
-      name: 'Meat',
-      img: 'images/meat.png'
-    }),
-      db.category.create({
-      name: 'Fish',
-      img: 'images/fish.png'
-    }),
-      db.category.create({
-      name: 'Vegetarian',
-      img: 'images/veggi.png'
-    }),    
-      db.category.create({
-      name: 'Desserts',
-      img: 'images/dessert.png'
-    }),
-      db.category.create({
-      name: 'Show-off',
-      img: 'images/show-off.png'
-    }),
-      db.category.create({
-      name: 'Under 20 mins',
-      img: 'images/fast.png'
-    }),
-      db.category.create({
-      name: 'Healthy',
-      img: 'images/healthy.png'
-    }),
+})
+// .then(function(){
+//   Promise.all([
+//     db.user.create({
+//       name: 'kip',
+//       email: 'kip',
+//       password: 'kip'
+//     }),
+//     db.recipe.create({
+//       title: 'Uitsmijter',
+//       body: 'Bak één of twee eieren. Smeer boter op de boterhammen en beleg deze daarna met ham en kaas. Leg hier als laatst je warme ei op.',
+//       ingredients: 'Twee boterhammen, kaas, ham, boter en eieren',
+//       rating: 3,
+//       category: 'Breakfast'
+//     }),
+//     db.recipe.create({
+//       title: 'Tosti',
+//       body: 'Beleg een boterham met ham en kaas en leg hier nog een boterham op. Smeer aan beide buitenste zijdes van de boterhammen een dun laagje boter. Leg nu je tosti op de gril tot deze aan beide kanten goudkleurig is.',
+//       ingredients: 'Twee boterhammen, kaas, ham, boter',
+//       rating: 3,
+//       category: 'Lunch'
+//     }),
+//     db.recipe.create({
+//       title: 'Kikkererwten uit de oven',
+//       body: 'Doe de kikkererwten in een kom. Doe hier de olijfolie, kruiden en peper bij en mix dit goed door elkaar. Spreid je mengsel over een met bakpapier bedekte bakplaat en plaats deze 20 minuten in de oven op 200 graden.',
+//       ingredients: 'Kikkererwten, paprikapoeder, chilipoeder, knoflookpoeder olijfolie en peper.',
+//       rating: 4,
+//       category: 'Appetizers'
+//     }),
+//     db.category.create({
+//       name: 'Breakfast',
+//       img: 'images/breakfast.png'
+//     }),
+//       db.category.create({
+//       name: 'Lunch',
+//       img: 'images/lunch.png'
+//     }),    
+//       db.category.create({
+//       name: 'Appetizers',
+//       img: 'images/appetizer.png'
+//     }),
+//       db.category.create({
+//       name: 'Soups',
+//       img: 'images/soup.png'
+//     }),
+//       db.category.create({
+//       name: 'Salads',
+//       img: 'images/salad.png'
+//     }),
+//       db.category.create({
+//       name: 'Meat',
+//       img: 'images/meat.png'
+//     }),
+//       db.category.create({
+//       name: 'Fish',
+//       img: 'images/fish.png'
+//     }),
+//       db.category.create({
+//       name: 'Vegetarian',
+//       img: 'images/veggi.png'
+//     }),    
+//       db.category.create({
+//       name: 'Desserts',
+//       img: 'images/dessert.png'
+//     }),
+//       db.category.create({
+//       name: 'Show-off',
+//       img: 'images/show-off.png'
+//     }),
+//       db.category.create({
+//       name: 'Under 20 mins',
+//       img: 'images/fast.png'
+//     }),
+//       db.category.create({
+//       name: 'Healthy',
+//       img: 'images/healthy.png'
+//     }),
 
- ])
+//  ])
 
-});
+// });
 
 
 
