@@ -6,16 +6,23 @@ block content
 	each recipe in thisRecipe	
 			.col-md-3
 				.recipe-formbig
-					img(src='/images/breakfast.png')
+					img(src='/images/show-off.png')
 					h3 #{recipe.title}
+					if recipe.rating == 1
+						h2.yellow ★
+					if recipe.rating == 2
+						h2.yellow ★★
+					if recipe.rating == 3
+						h2.yellow ★★★
+					if recipe.rating == 4
+						h2.yellow ★★★★
+					if recipe.rating == 5
+						h2.yellow ★★★★★
 					br
 					h4 #{recipe.ingredients}
 					br
 					br
 					h4 #{recipe.body}
 					br
-
-
-					h2.mooier #{recipe.rating} ★'s
 					
 				

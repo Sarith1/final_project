@@ -9,10 +9,20 @@ block content
 	each recipe in usersRecipes
 			.col-md-3
 				.recipe-form
-					img(src='...', alt='...')
+					img(src='/images/salad.png')
 					h3 #{recipe.title}
+					if recipe.rating == 1
+						h2.yellow ★
+					if recipe.rating == 2
+						h2.yellow ★★
+					if recipe.rating == 3
+						h2.yellow ★★★
+					if recipe.rating == 4
+						h2.yellow ★★★★
+					if recipe.rating == 5
+						h2.yellow ★★★★★
+					
 
-					p #{recipe.rating} ★'s
 					br 
 					a.cat-btn(href='recipe/' + recipe.title) View
 					

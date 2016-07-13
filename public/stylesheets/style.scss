@@ -57,7 +57,7 @@ a {
   -o-transition: color .2s ease;
   transition: color .2s ease;
   &:hover {
-    color: #C86A86;
+    color: #156241;
     text-decoration: none;
   }
   &:link, &:visited {
@@ -94,6 +94,10 @@ h1, h2, h3, h4, h5, h6 {
   color: #333;
   font-weight: 700;
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.yellow{
+  color: #FFD368 ;
 }
 
 h1 {
@@ -320,7 +324,7 @@ ul.navbar-nav {
   }
   > ul.dropdown-menu > li > a:hover {
     background: none !important;
-    color: #C0E6A0 !important;
+    color: #156241 !important;
   }
 }
 
@@ -330,7 +334,7 @@ ul.navbar-nav {
     color: #708AFF !important;
   }
   &:hover {
-    color: #708AFF !important;
+    color: #156241 !important;
   }
 }
 
@@ -581,7 +585,7 @@ ul.navbar-nav {
   margin-bottom: 15px;
   &:hover {
     text-decoration: underline;
-    color: #8C918F;
+    color: #156241;
   }
 }
 
